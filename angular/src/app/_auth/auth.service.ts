@@ -3,6 +3,8 @@ import {Http, Response} from '@angular/http';
 import 'rxjs/add/operator/map';
 import {Observable} from 'rxjs/Observable';
 
+import {SERVER, PORT} from '../_config/backend';
+
 @Injectable()
 export class AuthService {
 
@@ -10,10 +12,7 @@ export class AuthService {
     }
 
     login(username, password): Observable<String> {
-        // const server = '84.217.10.60';
-        const server = 'localhost';
-        const port = 3000;
-        return this.http.post('http://' + server + ':' + port + '/authenticate', {
+        return this.http.post('http://' + SERVER + ':' + PORT + '/authenticate', {
             username: username,
             password: password
         })

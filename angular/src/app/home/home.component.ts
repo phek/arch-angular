@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {TranslationService} from '../translation/translation.service';
+import {TranslationService} from '../_translation/translation.service';
 
 @Component({
     selector: 'app-home',

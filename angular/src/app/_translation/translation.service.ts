@@ -3,6 +3,8 @@ import APP_TRANSLATION_EN from './app/en';
 import APP_TRANSLATION_SV from './app/sv';
 import HOME_TRANSLATION_EN from './home/en';
 import HOME_TRANSLATION_SV from './home/sv';
+import RECRUITMENT_TRANSLATION_EN from './recruitment/en';
+import RECRUITMENT_TRANSLATION_SV from './recruitment/sv';
 
 const DEFAULT_LANGUAGE = 'en';
 
@@ -19,6 +21,10 @@ export class TranslationService {
         home: {
             en: HOME_TRANSLATION_EN,
             sv: HOME_TRANSLATION_SV
+        },
+        recruitment: {
+            en: RECRUITMENT_TRANSLATION_EN,
+            sv: RECRUITMENT_TRANSLATION_SV
         }
     };
 

@@ -1,9 +1,41 @@
 nav.navbar {
-  padding: 0 20px;
+    padding: 0 20px;
+    text-align: center;
 }
+
 .container {
     padding: 15px;
 }
+
 nav.navbar .navbar-right li img {
     height: 20px;
+}
+
+label {
+    font-weight: 500;
+}
+
+.valid-feedback, .invalid-feedback {
+    font-size: 85%;
+    margin-top: .25rem;
+}
+
+.valid-feedback {
+    color: #28a745;
+}
+
+.invalid-feedback {
+    color: #dc3545;
+}
+
+.ng-valid {
+    border-color: #28a745;
+}
+
+.ng-invalid:not(.ng-untouched):not(.ng-pristine) {
+    border-color: #dc3545;
+}
+
+.mb-3 {
+    margin-bottom: 30px;
 }

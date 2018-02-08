@@ -1,6 +1,6 @@
 const translation = {
     homeButton: 'Home',
-    authButton: 'Authorized page',
+    workButton: 'Work for us',
     loginButton: 'Log in',
     logoutButton: 'Log out'
 };

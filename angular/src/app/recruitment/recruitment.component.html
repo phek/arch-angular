@@ -1,0 +1,75 @@
+<form #recruitmentForm="ngForm" (submit)="submitForm()" class="needs-validation">
+    <div class="clearfix form-row">
+        <div class="col-md-3 mb-3">
+            <label for="firstname">{{translation.firstname}}</label>
+            <input [(ngModel)]="firstname" id="firstname" type="text" name="firstname" class="form-control"
+                   placeholder="{{translation.firstname}}" required #fn="ngModel">
+            <div class="valid-feedback" [hidden]="fn.invalid || fn.untouched || fn.pristine">
+                {{translation.valid}}
+            </div>
+            <div class="invalid-feedback" [hidden]="fn.valid || fn.pristine">
+                {{translation.invalid}} {{translation.firstname}}.
+            </div>
+        </div>
+        <div class="col-md-3 mb-3">
+            <label for="lastname">{{translation.lastname}}</label>
+            <input [(ngModel)]="lastname" id="lastname" type="text" name="ln" class="form-control"
+                   placeholder="{{translation.lastname}}" required #ln="ngModel">
+            <div class="valid-feedback" [hidden]="ln.invalid || ln.untouched || ln.pristine">
+                {{translation.valid}}
+            </div>
+            <div class="invalid-feedback" [hidden]="ln.valid || ln.pristine">
+                {{translation.invalid}} {{translation.lastname}}.
+            </div>
+        </div>
+        <div class="col-md-3 mb-3">
+            <label for="email">{{translation.email}}</label>
+            <input [(ngModel)]="email" id="email" type="text" name="email" class="form-control"
+                   placeholder="{{translation.email}}" required #em="ngModel">
+            <div class="valid-feedback" [hidden]="em.invalid || em.untouched || em.pristine">
+                {{translation.valid}}
+            </div>
+            <div class="invalid-feedback" [hidden]="em.valid || em.pristine">
+                {{translation.invalid}} {{translation.email}}.
+            </div>
+        </div>
+        <div class="col-md-3 mb-3">
+            <label for="birth">{{translation.birth}}</label>
+            <input [(ngModel)]="birth" id="birth" type="text" name="birth" class="form-control"
+                   placeholder="{{translation.birth}}" required #bi="ngModel">
+            <div class="valid-feedback" [hidden]="bi.invalid || bi.untouched || bi.pristine">
+                {{translation.valid}}
+            </div>
+            <div class="invalid-feedback" [hidden]="bi.valid || bi.pristine">
+                {{translation.invalid}} {{translation.birth}}.
+            </div>
+        </div>
+    </div>
+    <div class="clearfix form-row">
+        <div class="col-md-3 mb-3">
+            <label for="username">{{translation.username}}</label>
+            <input [(ngModel)]="username" id="username" name="username" type="text" class="form-control"
+                   placeholder="{{translation.username}}" required #un="ngModel">
+            <div class="valid-feedback" [hidden]="un.invalid || un.untouched || un.pristine">
+                {{translation.valid}}
+            </div>
+            <div class="invalid-feedback" [hidden]="un.valid || un.pristine">
+                {{translation.invalid}} {{translation.username}}.
+            </div>
+        </div>
+        <div class="col-md-3 mb-3">
+            <label for="password">{{translation.password}}</label>
+            <input [(ngModel)]="password" id="password" name="password" type="password" class="form-control"
+                   placeholder="{{translation.password}}" required #pw="ngModel">
+            <div class="valid-feedback" [hidden]="pw.invalid || pw.untouched || pw.pristine">
+                {{translation.valid}}
+            </div>
+            <div class="invalid-feedback" [hidden]="pw.valid || pw.pristine">
+                {{translation.invalid}} {{translation.password}}.
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <button type="submit" class="btn btn-primary">{{translation.submit}}</button>
+    </div>
+</form>

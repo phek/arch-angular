@@ -1,6 +1,6 @@
 const translation = {
     homeButton: 'Hem',
-    authButton: 'Authentiserings sida',
+    workButton: 'Jobba för oss',
     loginButton: 'Logga in',
     logoutButton: 'Logga ut'
 };

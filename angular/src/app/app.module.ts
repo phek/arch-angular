@@ -1,21 +1,25 @@
 import {BrowserModule} from '@angular/platform-browser';
+import {FormsModule} from '@angular/forms';
 import {NgModule} from '@angular/core';
 import {HttpModule} from '@angular/http';
 import {AppRoutingModule} from './app-routing.module';
 
+import {AuthService} from './_auth/auth.service';
+import {TranslationService} from './_translation/translation.service';
+
 import {AppComponent} from './app.component';
 import {HomeComponent} from './home/home.component';
-
-import {AuthService} from './auth/auth.service';
-import {TranslationService} from './translation/translation.service';
+import {RecruitmentComponent} from './recruitment/recruitment.component';
 
 @NgModule({
     declarations: [
         AppComponent,
-        HomeComponent
+        HomeComponent,
+        RecruitmentComponent
     ],
     imports: [
         BrowserModule,
+        FormsModule,
         HttpModule,
         AppRoutingModule
     ],
