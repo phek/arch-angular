@@ -12,6 +12,8 @@ export class AppComponent {
     translation = {};
     language: String;
     loggedIn: boolean;
+    username: String;
+    password: String;
 
     constructor(private translator: TranslationService, private auth: AuthService) {
         this.translation = translator.getTranslation('app');
@@ -25,7 +27,7 @@ export class AppComponent {
     }
 
     login() {
-        this.auth.login('test', 'test')
+        this.auth.login(this.username, this.password)
             .subscribe(response => {
                     if (response.error) {
                         console.log(response.error);
@@ -38,9 +40,6 @@ export class AppComponent {
                 },
                 error => {
                     console.log(error);
-                },
-                () => {
-                    // todo
                 }
             );
     }

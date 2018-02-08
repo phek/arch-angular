@@ -11,12 +11,14 @@ import {RecruitmentService} from './recruitment/recruitment.service';
 import {AppComponent} from './app.component';
 import {HomeComponent} from './home/home.component';
 import {RecruitmentComponent} from './recruitment/recruitment.component';
+import { PrivateComponent } from './private/private.component';
 
 @NgModule({
     declarations: [
         AppComponent,
         HomeComponent,
-        RecruitmentComponent
+        RecruitmentComponent,
+        PrivateComponent
     ],
     imports: [
         BrowserModule,
