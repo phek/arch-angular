@@ -1,3 +1,9 @@
 nav.navbar {
   padding: 0 20px;
 }
+.container {
+    padding: 15px;
+}
+nav.navbar .navbar-right li img {
+    height: 20px;
+}

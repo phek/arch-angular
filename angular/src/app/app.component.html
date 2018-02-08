@@ -1,23 +1,33 @@
 <div class="container">
-  <nav class="navbar navbar-default">
-    <ul class="nav navbar-nav">
-      <li>
-        <a routerLink="/deals" routerLinkActive="active">Deals</a>
-      </li>
-      <li>
-        <a routerLink="/special" routerLinkActive="active">Private Deals</a>
-      </li>
-    </ul>
-    <ul class="nav navbar-nav navbar-right">
-      <li *ngIf="!loggedIn">
-        <a href="javascript:void(0);" (click)="login()">Log In</a>
-      </li>
-      <li *ngIf="loggedIn">
-        <a href="javascript:void(0);" (click)="logout()">Log Out</a>
-      </li>
-    </ul>
-  </nav>
-  <div class="col-sm-12">
-    <router-outlet></router-outlet>
-  </div>
+    <nav class="navbar navbar-default">
+        <ul class="nav navbar-nav">
+            <li>
+                <a routerLink="/" routerLinkActive="active">{{translation.homeButton}}</a>
+            </li>
+            <li>
+                <a routerLink="/auth" routerLinkActive="active">{{translation.authButton}}</a>
+            </li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+            <li *ngIf="language !== 'en'">
+                <a href="javascript:void(0);" (click)="setLanguage('en')">
+                    <img src="assets/images/en.png">
+                </a>
+            </li>
+            <li *ngIf="language !== 'sv'">
+                <a href="javascript:void(0);" (click)="setLanguage('sv')">
+                    <img src="assets/images/sv.png">
+                </a>
+            </li>
+            <li *ngIf="!loggedIn">
+                <a href="javascript:void(0);" (click)="login()">{{translation.loginButton}}</a>
+            </li>
+            <li *ngIf="loggedIn">
+                <a href="javascript:void(0);" (click)="logout()">{{translation.logoutButton}}</a>
+            </li>
+        </ul>
+    </nav>
+    <div class="col-sm-12">
+        <router-outlet></router-outlet>
+    </div>
 </div>

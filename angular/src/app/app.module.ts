@@ -5,22 +5,25 @@ import {AppRoutingModule} from './app-routing.module';
 
 import {AppComponent} from './app.component';
 import {HomeComponent} from './home/home.component';
+
 import {AuthService} from './auth/auth.service';
+import {TranslationService} from './translation/translation.service';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    HomeComponent
-  ],
-  imports: [
-    BrowserModule,
-    HttpModule,
-    AppRoutingModule
-  ],
-  providers: [
-    AuthService
-  ],
-  bootstrap: [AppComponent]
+    declarations: [
+        AppComponent,
+        HomeComponent
+    ],
+    imports: [
+        BrowserModule,
+        HttpModule,
+        AppRoutingModule
+    ],
+    providers: [
+        AuthService,
+        TranslationService
+    ],
+    bootstrap: [AppComponent]
 })
 export class AppModule {
 }
