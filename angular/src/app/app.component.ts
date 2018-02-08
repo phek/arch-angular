@@ -26,12 +26,14 @@ export class AppComponent {
 
     login() {
         this.auth.login('test', 'test')
-            .subscribe(token => {
-                    if (token) {
+            .subscribe(response => {
+                    if (response.error) {
+                        console.log(response.error);
+                    } else if (response.token) {
                         this.loggedIn = true;
-                        console.log('Logged in with token: ' + token);
+                        console.log('Logged in with token: ' + response.token);
                     } else {
-                        // this.error = 'Username or password is incorrect';
+                        console.log('A server error occurred.');
                     }
                 },
                 error => {

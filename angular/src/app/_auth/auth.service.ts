@@ -11,7 +11,7 @@ export class AuthService {
     constructor(private http: Http) {
     }
 
-    login(username, password): Observable<String> {
+    login(username, password): Observable<any> {
         return this.http.post('http://' + SERVER + ':' + PORT + '/authenticate', {
             username: username,
             password: password
@@ -20,10 +20,8 @@ export class AuthService {
                 const token = response.json() && response.json().token;
                 if (token) {
                     localStorage.setItem('token', token);
-                    return token;
-                } else {
-                    return null;
                 }
+                return response.json();
             });
     }
 

@@ -6,6 +6,7 @@ import {AppRoutingModule} from './app-routing.module';
 
 import {AuthService} from './_auth/auth.service';
 import {TranslationService} from './_translation/translation.service';
+import {RecruitmentService} from './recruitment/recruitment.service';
 
 import {AppComponent} from './app.component';
 import {HomeComponent} from './home/home.component';
@@ -25,7 +26,8 @@ import {RecruitmentComponent} from './recruitment/recruitment.component';
     ],
     providers: [
         AuthService,
-        TranslationService
+        TranslationService,
+        RecruitmentService
     ],
     bootstrap: [AppComponent]
 })
