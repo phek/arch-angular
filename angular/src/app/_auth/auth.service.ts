@@ -12,7 +12,7 @@ export class AuthService {
     }
 
     login(username, password): Observable<any> {
-        return this.http.post('http://' + SERVER + ':' + PORT + '/authenticate', {
+        return this.http.post('http://' + SERVER + ':' + PORT + '/authentication', {
             username: username,
             password: password
         })
