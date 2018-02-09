@@ -2,7 +2,7 @@ const translation = {
     firstname: 'Förnamn',
     lastname: 'Efternamn',
     email: 'Email',
-    birth: 'Födelsedatum',
+    ssn: 'Personnummer',
     username: 'Användarnamn',
     password: 'Lösenord',
     valid: 'Ser bra ut!',

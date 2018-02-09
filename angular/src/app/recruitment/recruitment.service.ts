@@ -9,12 +9,12 @@ export class RecruitmentService {
     constructor(private http: Http) {
     }
 
-    apply(firstname, lastname, email, birth, username, password): Observable<any> {
+    apply(firstname, lastname, email, ssn, username, password): Observable<any> {
         return this.http.post('http://' + SERVER + ':' + PORT + '/registration', {
             firstname: firstname,
             lastname: lastname,
             email: email,
-            birth: birth,
+            ssn: ssn,
             username: username,
             password: password
         })

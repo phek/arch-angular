@@ -2,7 +2,7 @@ const translation = {
     firstname: 'First name',
     lastname: 'Last name',
     email: 'Email',
-    birth: 'Date of birth',
+    ssn: 'Social security number',
     username: 'Username',
     password: 'Password',
     valid: 'Looks good!',
