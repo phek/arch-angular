@@ -34,14 +34,14 @@
             </div>
         </div>
         <div class="col-md-3 mb-3">
-            <label for="birth">{{translation.birth}}</label>
-            <input [(ngModel)]="birth" id="birth" type="text" name="birth" class="form-control"
-                   placeholder="{{translation.birth}}" required #bi="ngModel">
-            <div class="valid-feedback" [hidden]="bi.invalid || bi.untouched || bi.pristine">
+            <label for="ssn">{{translation.ssn}}</label>
+            <input [(ngModel)]="ssn" id="ssn" type="text" name="ssn" class="form-control"
+                   placeholder="{{translation.ssn}}" required #sn="ngModel">
+            <div class="valid-feedback" [hidden]="sn.invalid || sn.untouched || sn.pristine">
                 {{translation.valid}}
             </div>
-            <div class="invalid-feedback" [hidden]="bi.valid || bi.pristine">
-                {{translation.invalid}} {{translation.birth}}.
+            <div class="invalid-feedback" [hidden]="sn.valid || sn.pristine">
+                {{translation.invalid}} {{translation.ssn}}.
             </div>
         </div>
     </div>

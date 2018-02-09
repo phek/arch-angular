@@ -14,7 +14,7 @@ export class RecruitmentComponent {
     firstname: String;
     lastname: String;
     email: String;
-    birth: String;
+    ssn: String;
     username: String;
     password: String;
 
@@ -28,7 +28,7 @@ export class RecruitmentComponent {
 
     submitForm() {
         console.log('SUBMIT');
-        this.recruitService.apply(this.firstname, this.lastname, this.email, this.birth,
+        this.recruitService.apply(this.firstname, this.lastname, this.email, this.ssn,
             this.username, this.password).subscribe(response => {
                 const token = response.token;
                 const error = response.error;
