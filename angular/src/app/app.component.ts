@@ -56,6 +56,9 @@ export class AppComponent {
                             case errors.USERNAME_UNAVAILABLE:
                                 message = this.translator.getResponse('general').USERNAME_UNAVAILABLE;
                                 break;
+                            case errors.INVALID_USER:
+                                message = this.translator.getResponse('general').INVALID_USER;
+                                break;
                         }
                         this.showError(message);
                         console.log(error);
