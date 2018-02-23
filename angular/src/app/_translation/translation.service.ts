@@ -5,9 +5,14 @@ import HOME_TRANSLATION_EN from './home/en';
 import HOME_TRANSLATION_SV from './home/sv';
 import RECRUITMENT_TRANSLATION_EN from './recruitment/en';
 import RECRUITMENT_TRANSLATION_SV from './recruitment/sv';
+import RECRUITMENT_RESPONSE_EN from './_response/recruitment/en';
+import RECRUITMENT_RESPONSE_SV from './_response/recruitment/sv';
 
 const DEFAULT_LANGUAGE = 'en';
 
+/**
+ * Translation service. Handles translation on the website.
+ */
 @Injectable()
 export class TranslationService {
 
@@ -24,12 +29,21 @@ export class TranslationService {
         },
         recruitment: {
             en: RECRUITMENT_TRANSLATION_EN,
-            sv: RECRUITMENT_TRANSLATION_SV
+            sv: RECRUITMENT_TRANSLATION_SV,
+            response: {
+                en: RECRUITMENT_RESPONSE_EN,
+                sv: RECRUITMENT_RESPONSE_SV
+            }
         }
     };
 
     languageChanged: EventEmitter<String> = new EventEmitter();
 
+    /**
+     * Gets the translation of the page.
+     * @param page The page to get translation for.
+     * @returns An object containing the translations for the page.
+     */
     getTranslation(page) {
         if (this.pages[page][this.language]) {
             return this.pages[page][this.language];
@@ -38,11 +52,33 @@ export class TranslationService {
         }
     }
 
+    /**
+     * Gets the errors of the page.
+     * @param page The pag eto get translation for.
+     * @returns An object containing the translated errors for the page.
+     */
+    getResponse(page) {
+        const response = this.pages[page] && this.pages[page].response;
+        if (response[this.language]) {
+            return response[this.language];
+        } else {
+            return response[DEFAULT_LANGUAGE];
+        }
+    }
+
+    /**
+     * Sets the current language.
+     * @param language The language.
+     */
     setLanguage(language) {
         this.language = language;
         this.languageChanged.emit(language);
     }
 
+    /**
+     * Gets the current language.
+     * @returns The language.
+     */
     getLanguage() {
         return this.language;
     }

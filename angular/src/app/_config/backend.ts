@@ -8,10 +8,10 @@
 export const SERVER = '127.0.0.1';
 
 /* Server Port */
-// export const PORT = 3000;
+export const PORT = 3000;
 
 /* Local Port */
-export const PORT = 27924;
+// export const PORT = 27924;
 
 /* Local Port 2 */
 // export const PORT = 8080;

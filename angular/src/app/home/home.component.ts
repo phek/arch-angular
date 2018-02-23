@@ -6,7 +6,11 @@ import {TranslationService} from '../_translation/translation.service';
     templateUrl: './home.component.html',
     styleUrls: ['./home.component.css']
 })
-export class HomeComponent implements OnInit {
+
+/**
+ * Home component. Active on the home page.
+ */
+export class HomeComponent {
 
     translation = {};
 
@@ -17,8 +21,4 @@ export class HomeComponent implements OnInit {
                 this.translation = translator.getTranslation('home');
             });
     }
-
-    ngOnInit() {
-    }
-
 }

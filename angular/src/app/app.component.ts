@@ -7,6 +7,10 @@ import {TranslationService} from './_translation/translation.service';
     templateUrl: './app.component.html',
     styleUrls: ['./app.component.css']
 })
+
+/**
+ * Main component. Active on every page.
+ */
 export class AppComponent {
 
     translation = {};
@@ -15,6 +19,11 @@ export class AppComponent {
     username: String;
     password: String;
 
+    /**
+     * Initiate variables and services.
+     * @param {TranslationService} translator
+     * @param {AuthService} auth
+     */
     constructor(private translator: TranslationService, private auth: AuthService) {
         this.translation = translator.getTranslation('app');
         this.language = translator.getLanguage();
@@ -24,8 +33,15 @@ export class AppComponent {
                 this.translation = translator.getTranslation('app');
                 this.language = language;
             });
+        this.auth.statusChanged.subscribe(
+            () => {
+                this.loggedIn = auth.isAuthenticated();
+            });
     }
 
+    /**
+     * Authenticates to the REST Api and logs in if the request was successful.
+     */
     login() {
         this.auth.login(this.username, this.password)
             .subscribe(response => {
@@ -44,11 +60,18 @@ export class AppComponent {
             );
     }
 
+    /**
+     * Logout the user.
+     */
     logout() {
         this.auth.logout();
         this.loggedIn = false;
     }
 
+    /**
+     * Sets the current language.
+     * @param language The language.
+     */
     setLanguage(language) {
         this.translator.setLanguage(language);
     }
