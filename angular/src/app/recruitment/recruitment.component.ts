@@ -45,16 +45,10 @@ export class RecruitmentComponent {
                 const error = response.error;
 
                 if (error) {
-                    let message = this.translator.getResponse('recruitment').UNKNOWN_ERROR;
+                    let message = this.translator.getResponse('general').UNKNOWN_ERROR;
                     switch (error) {
                         case errors.USERNAME_UNAVAILABLE:
-                            message = this.translator.getResponse('recruitment').USERNAME_UNAVAILABLE;
-                            break;
-                        case errors.INVALID_TOKEN:
-                            message = this.translator.getResponse('recruitment').INVALID_TOKEN;
-                            break;
-                        case errors.INVALID_USER:
-                            message = this.translator.getResponse('recruitment').INVALID_USER;
+                            message = this.translator.getResponse('general').USERNAME_UNAVAILABLE;
                             break;
                     }
                     this.showError(message);
@@ -64,14 +58,14 @@ export class RecruitmentComponent {
                     this.auth.setToken(token);
                     this.showSuccess(this.translator.getResponse('recruitment').SUCCESS);
                 } else {
-                    this.showError(this.translator.getResponse('recruitment').UNKNOWN_ERROR);
+                    this.showError(this.translator.getResponse('general').UNKNOWN_ERROR);
                 }
 
                 $('.loading').fadeOut();
             },
             error => {
                 if (error.status === 0 || error.status === 401) {
-                    this.showError(this.translator.getResponse('recruitment').CONNECTION_REFUSED);
+                    this.showError(this.translator.getResponse('general').CONNECTION_REFUSED);
                 }
                 console.log(error);
                 $('.loading').fadeOut();
@@ -83,7 +77,7 @@ export class RecruitmentComponent {
      * @param message The error.
      */
     showError(message) {
-        const div = $('.error_message');
+        const div = $('.rec.error_message');
         this.hideAll();
         div.html(message);
         div.fadeIn();
@@ -94,7 +88,7 @@ export class RecruitmentComponent {
      * @param message The message.
      */
     showSuccess(message) {
-        const div = $('.success_message');
+        const div = $('.rec.success_message');
         this.hideAll();
         div.html(message);
         div.fadeIn();
@@ -104,7 +98,7 @@ export class RecruitmentComponent {
      * Hides all message elements.
      */
     hideAll() {
-        $('.success_message').hide();
-        $('.error_message').hide();
+        $('.rec.success_message').hide();
+        $('.rec.error_message').hide();
     }
 }

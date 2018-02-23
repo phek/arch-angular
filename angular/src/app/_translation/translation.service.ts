@@ -1,6 +1,10 @@
 import {EventEmitter, Injectable} from '@angular/core';
+import GENERAL_RESPONSE_EN from './_response/_general/en';
+import GENERAL_RESPONSE_SV from './_response/_general/sv';
 import APP_TRANSLATION_EN from './app/en';
 import APP_TRANSLATION_SV from './app/sv';
+import APP_RESPONSE_EN from './_response/app/en';
+import APP_RESPONSE_SV from './_response/app/sv';
 import HOME_TRANSLATION_EN from './home/en';
 import HOME_TRANSLATION_SV from './home/sv';
 import RECRUITMENT_TRANSLATION_EN from './recruitment/en';
@@ -19,9 +23,19 @@ export class TranslationService {
     language = DEFAULT_LANGUAGE;
 
     pages = {
+        general: {
+            response: {
+                en: GENERAL_RESPONSE_EN,
+                sv: GENERAL_RESPONSE_SV
+            }
+        },
         app: {
             en: APP_TRANSLATION_EN,
-            sv: APP_TRANSLATION_SV
+            sv: APP_TRANSLATION_SV,
+            response: {
+                en: APP_RESPONSE_EN,
+                sv: APP_RESPONSE_SV
+            }
         },
         home: {
             en: HOME_TRANSLATION_EN,

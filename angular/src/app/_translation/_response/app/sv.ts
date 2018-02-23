@@ -1,5 +1,5 @@
 const translation = {
-    SUCCESS: 'Registration successful!'
+    SUCCESS: 'Inloggningen lyckades!',
 };
 
 export default translation;

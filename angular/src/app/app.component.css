@@ -94,3 +94,7 @@
 .login-help{
     font-size: 12px;
 }
+
+.log.error_message, .log.success_message {
+    margin-bottom: 10px;
+}

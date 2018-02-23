@@ -41,13 +41,11 @@ label {
 }
 
 .error_message, .success_message {
-    margin: 15px;
     border: 1px solid #ff0000;
     padding: 10px;
     border-radius: 3px;
     background-color: #ffcfcf;
     display: none;
-    width: fit-content;
 }
 
 .error_message {
@@ -63,5 +61,9 @@ label {
 .loading {
     height: 25px;
     margin-left: 15px;
+    display: none;
+}
+
+#hideModal {
     display: none;
 }

@@ -1,6 +1,9 @@
 import {Component} from '@angular/core';
 import {AuthService} from './_auth/auth.service';
 import {TranslationService} from './_translation/translation.service';
+import {errors} from './_config/responses';
+
+declare const $;
 
 @Component({
     selector: 'app-root',
@@ -45,16 +48,28 @@ export class AppComponent {
     login() {
         this.auth.login(this.username, this.password)
             .subscribe(response => {
-                    if (response.error) {
-                        console.log(response.error);
-                    } else if (response.token) {
+                    const token = response.token;
+                    const error = response.error;
+                    if (error) {
+                        let message = this.translator.getResponse('general').UNKNOWN_ERROR;
+                        switch (error) {
+                            case errors.USERNAME_UNAVAILABLE:
+                                message = this.translator.getResponse('general').USERNAME_UNAVAILABLE;
+                                break;
+                        }
+                        this.showError(message);
+                        console.log(error);
+                    } else if (token) {
                         this.loggedIn = true;
-                        console.log('Logged in with token: ' + response.token);
+                        this.showSuccess(this.translator.getResponse('app').SUCCESS);
+                        console.log('Logged in with token: ' + token);
                     } else {
+                        this.showError(this.translator.getResponse('general').UNKNOWN_ERROR);
                         console.log('A server error occurred.');
                     }
                 },
                 error => {
+                    this.showError(this.translator.getResponse('general').CONNECTION_REFUSED);
                     console.log(error);
                 }
             );
@@ -74,5 +89,38 @@ export class AppComponent {
      */
     setLanguage(language) {
         this.translator.setLanguage(language);
+        $('.success_message, .error_message').fadeOut();
+    }
+
+
+    /**
+     * Shows an error message for the user.
+     * @param message The error.
+     */
+    showError(message) {
+        const div = $('.log.error_message');
+        this.hideAll();
+        div.html(message);
+        div.fadeIn();
+    }
+
+    /**
+     * Shows a success message for the user.
+     * @param message The message.
+     */
+    showSuccess(message) {
+        this.hideAll();
+        // const div = $('.log.success_message');
+        // div.html(message);
+        // div.fadeIn();
+        $('#hideModal').click();
+    }
+
+    /**
+     * Hides all message elements.
+     */
+    hideAll() {
+        $('.log.success_message').hide();
+        $('.log.error_message').hide();
     }
 }
