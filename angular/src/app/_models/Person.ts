@@ -7,4 +7,12 @@ export class Person {
     email: string;
     birth: string;
     role: string;
+
+    constructor(firstname, lastname, email, birth, role) {
+        this.firstname = firstname;
+        this.lastname = lastname;
+        this.email = email;
+        this.birth = birth;
+        this.role = role;
+    }
 }
