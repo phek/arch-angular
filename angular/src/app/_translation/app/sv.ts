@@ -3,7 +3,9 @@ const translation = {
     workButton: 'Jobba för oss',
     loginButton: 'Logga in',
     logoutButton: 'Logga ut',
-    privateButton: 'Registrerade anmälningar'
+    privateButton: 'Registrerade anmälningar',
+    username: 'Användarnamn',
+    password: 'Lösenord'
 };
 
 export default translation;

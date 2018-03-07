@@ -38,17 +38,14 @@
      style="display: none;">
     <div class="modal-dialog">
         <div class="loginmodal-container">
-            <h1>Login to Your Account</h1><br>
+            <h1>{{translation.loginButton}}</h1><br>
             <form (submit)="login()">
-                <input type="text" name="user" placeholder="Username" [(ngModel)]="username" required>
-                <input type="password" name="pass" placeholder="Password" [(ngModel)]="password" required>
-                <input type="submit" name="login" class="login loginmodal-submit" value="Login">
+                <input type="text" name="user" placeholder="{{translation.username}}" [(ngModel)]="username" required>
+                <input type="password" name="pass" placeholder="{{translation.password}}" [(ngModel)]="password" required>
+                <input type="submit" name="login" class="login loginmodal-submit" value="{{translation.loginButton}}">
             </form>
             <div class="log success_message"></div>
             <div class="log error_message"></div>
-            <div class="login-help">
-                <a href="#">Register</a> - <a href="#">Forgot Password</a>
-            </div>
         </div>
         <button class="btn btn-primary btn-lg" id="hideModal" data-toggle="modal" data-target="#login-modal"></button>
     </div>

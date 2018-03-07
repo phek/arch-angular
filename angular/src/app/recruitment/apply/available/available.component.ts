@@ -11,7 +11,6 @@ import {TranslationService} from "../../../_translation/translation.service";
 export class AvailableComponent {
 
     translation = {};
-    competences = ["None"];
 
     availableFrom: String;
     availableTo: String;
