@@ -1,0 +1,22 @@
+<div *ngFor="let applicant of applications" class="field clearfix">
+    <h3>{{applicant.firstname}} {{applicant.lastname}}</h3>
+    <p class="appli-email">{{applicant.email}}</p>
+    <div class="col-md-6 scrollbox">
+        <h4>Available:</h4>
+        <p *ngFor="let available of applicant.availabilities">
+            {{getDateFromUnix(available.fromDate) + " - " + getDateFromUnix(available.toDate)}}
+        </p>
+    </div>
+    <div class="col-md-6 scrollbox">
+        <h4>Experience:</h4>
+        <div *ngFor="let competence of applicant.competences" class="field">
+            <p>
+                <b>{{translation.competence}}:</b> {{competence.competence}}
+            </p>
+            <p>
+                <b>{{translation.yearsOfExperience}}:</b> {{competence.yearsOfExperience}}
+            </p>
+        </div>
+    </div>
+</div>
+<div class="rec error_message"></div>

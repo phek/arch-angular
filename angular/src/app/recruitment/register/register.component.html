@@ -1,4 +1,6 @@
-<form #recruitmentForm="ngForm" (submit)="submitForm()" class="needs-validation">
+<p>{{translation.regInfo}}</p>
+<br>
+<form #recruitmentForm="ngForm" (submit)="register()" class="needs-validation">
     <div class="clearfix form-row">
         <div class="col-md-3 mb-3">
             <label for="firstname">{{translation.firstname}}</label>

@@ -10,15 +10,21 @@ import {RecruitmentService} from './recruitment/recruitment.service';
 
 import {AppComponent} from './app.component';
 import {HomeComponent} from './home/home.component';
-import {RecruitmentComponent} from './recruitment/recruitment.component';
-import { PrivateComponent } from './private/private.component';
+import {RegisterComponent} from './recruitment/register/register.component';
+import {ReviewComponent} from './recruitment/review/review.component';
+import {ApplyComponent} from './recruitment/apply/apply.component';
+import {AvailableComponent} from './recruitment/apply/available/available.component';
+import {CompetenceComponent} from './recruitment/apply/competence/competence.component';
 
 @NgModule({
     declarations: [
         AppComponent,
         HomeComponent,
-        RecruitmentComponent,
-        PrivateComponent
+        RegisterComponent,
+        ReviewComponent,
+        ApplyComponent,
+        AvailableComponent,
+        CompetenceComponent
     ],
     imports: [
         BrowserModule,

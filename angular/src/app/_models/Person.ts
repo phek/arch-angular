@@ -1,5 +1,5 @@
 /**
- * This class represents a person from the database.
+ * This class represents a applicant from the database.
  */
 export class Person {
     firstname: string;

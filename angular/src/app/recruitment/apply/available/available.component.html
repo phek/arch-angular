@@ -1,0 +1,23 @@
+<form #recruitmentForm="ngForm" (submit)="addAvailability()" class="needs-validation">
+    <div class="clearfix form-row">
+        <div class="col-md-3 mb-3">
+            <label for="availableFrom">{{translation.availableFrom}}</label>
+            <input [(ngModel)]="availableFrom" id="availableFrom" type="date" name="availableFrom"
+                   class="form-control"
+                   required>
+        </div>
+        <div class="col-md-3 mb-3">
+            <label for="availableTo">{{translation.availableTo}}</label>
+            <input [(ngModel)]="availableTo" id="availableTo" type="date" name="availableTo" class="form-control"
+                   required>
+        </div>
+    </div>
+    <div class="clearfix">
+        <div class="col-md-3">
+            <button type="submit" class="btn btn-primary">{{translation.addAvailability}}</button>
+            <img class="loading" src="assets/images/loading.gif" alt="Loading.."/>
+        </div>
+    </div>
+    <div class="rec success_message"></div>
+    <div class="rec error_message"></div>
+</form>

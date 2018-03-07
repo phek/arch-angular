@@ -5,7 +5,10 @@
                 <a routerLink="/" routerLinkActive="active">{{translation.homeButton}}</a>
             </li>
             <li>
-                <a routerLink="/recruitment" routerLinkActive="active">{{translation.workButton}}</a>
+                <a routerLink="/apply" routerLinkActive="active">{{translation.workButton}}</a>
+            </li>
+            <li *ngIf="isAdmin">
+                <a routerLink="/recruitment" routerLinkActive="active">{{translation.privateButton}}</a>
             </li>
         </ul>
         <ul class="nav navbar-nav navbar-right">

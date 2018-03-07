@@ -4,6 +4,7 @@ import 'rxjs/add/operator/map';
 import {Observable} from 'rxjs/Observable';
 
 import {SERVER, PORT} from '../_config/backend';
+import {Router} from "@angular/router";
 
 /**
  * Auth service. Handles local authorization.
@@ -13,16 +14,18 @@ export class AuthService {
 
     statusChanged: EventEmitter<String> = new EventEmitter();
 
-    constructor(private http: Http) {
+    constructor(private http: Http, private router: Router) {
     }
 
     /**
      * Set token.
      * @param token The token.
+     * @param role The role of the user.
      */
-    setToken(token) {
+    setToken(token, isAdmin) {
         if (token) {
             localStorage.setItem('token', token);
+            localStorage.setItem('isAdmin', isAdmin);
             this.statusChanged.emit();
         }
     }
@@ -39,10 +42,12 @@ export class AuthService {
             password: password
         })
             .map((response: Response) => {
-                const token = response.json() && response.json().token;
-                if (token) {
-                    localStorage.setItem('token', token);
-                    this.statusChanged.emit();
+                if (response.json()) {
+                    const token = response.json().token;
+                    const isAdmin = response.json().isAdmin;
+                    if (token) {
+                        this.setToken(token, isAdmin);
+                    }
                 }
                 return response.json();
             });
@@ -53,6 +58,7 @@ export class AuthService {
      */
     logout() {
         localStorage.removeItem('token');
+        localStorage.removeItem('isAdmin');
     }
 
     /**
@@ -60,6 +66,13 @@ export class AuthService {
      */
     isAuthenticated() {
         return !!localStorage.getItem('token');
+    }
+
+    /**
+     * @returns {boolean} Is the user admin?
+     */
+    isAdmin() {
+        return localStorage.getItem('isAdmin') == "true";
     }
 
 }

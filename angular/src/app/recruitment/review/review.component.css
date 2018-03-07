@@ -1,0 +1,14 @@
+.field:not(:last-child) {
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+}
+
+.scrollbox {
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+.appli-email {
+    color: #888;
+}

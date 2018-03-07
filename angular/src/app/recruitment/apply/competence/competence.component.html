@@ -1,0 +1,22 @@
+<form #recruitmentForm="ngForm" (submit)="addExperience()" class="needs-validation">
+    <div class="clearfix form-row">
+        <div class="col-md-3 mb-3">
+            <label for="competence">{{translation.competence}}</label>
+            <input [(ngModel)]="competence" id="competence" type="text" name="competence"
+                   class="form-control" placeholder="{{translation.competence}}" required>
+        </div>
+        <div class="col-md-3 mb-3">
+            <label for="yearsOfExperience">{{translation.yearsOfExperience}}</label>
+            <input [(ngModel)]="yearsOfExperience" id="yearsOfExperience" type="text" name="yearsOfExperience"
+                   class="form-control" placeholder="{{translation.yearsOfExperience}}" required>
+        </div>
+    </div>
+    <div class="clearfix">
+        <div class="col-md-3">
+            <button type="submit" class="btn btn-primary">{{translation.addExperience}}</button>
+            <img class="loading" src="assets/images/loading.gif" alt="Loading.."/>
+        </div>
+    </div>
+    <div class="rec success_message"></div>
+    <div class="rec error_message"></div>
+</form>

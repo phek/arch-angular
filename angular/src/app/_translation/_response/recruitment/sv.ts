@@ -1,5 +1,5 @@
 const translation = {
-    SUCCESS: 'Registreringen lyckades!',
+    SUCCESS: 'Skickat!'
 };
 
 export default translation;

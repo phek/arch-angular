@@ -3,8 +3,11 @@ import {Routes, RouterModule} from '@angular/router';
 import {AuthGuard} from './_auth/auth.guard';
 
 import {HomeComponent} from './home/home.component';
-import {RecruitmentComponent} from './recruitment/recruitment.component';
-import {PrivateComponent} from './private/private.component';
+import {RegisterComponent} from './recruitment/register/register.component';
+import {ApplyComponent} from './recruitment/apply/apply.component';
+import {CompetenceComponent} from './recruitment/apply/competence/competence.component';
+import {AvailableComponent} from './recruitment/apply/available/available.component';
+import {ReviewComponent} from './recruitment/review/review.component';
 
 const routes: Routes = [
     {
@@ -12,12 +15,34 @@ const routes: Routes = [
         component: HomeComponent
     },
     {
-        path: 'recruitment',
-        component: RecruitmentComponent
+        path: 'register',
+        component: RegisterComponent
     },
     {
-        path: 'private',
-        component: PrivateComponent,
+        path: 'apply',
+        component: ApplyComponent,
+        canActivate: [
+            AuthGuard
+        ]
+    },
+    {
+        path: 'apply/available',
+        component: AvailableComponent,
+        canActivate: [
+            AuthGuard
+        ]
+    },
+
+    {
+        path: 'apply/competence',
+        component: CompetenceComponent,
+        canActivate: [
+            AuthGuard
+        ]
+    },
+    {
+        path: 'recruitment',
+        component: ReviewComponent,
         canActivate: [
             AuthGuard
         ]

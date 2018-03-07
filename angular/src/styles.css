@@ -67,3 +67,8 @@ label {
 #hideModal {
     display: none;
 }
+
+.rec.error_message, .rec.success_message {
+    width: fit-content;
+    margin: 15px;
+}
